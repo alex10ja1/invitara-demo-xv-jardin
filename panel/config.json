@@ -1,0 +1,13 @@
+{
+  "_comentario": "Panel de MUESTRA: modo demo, lista inventada en demo-lista.json. No se conecta a Google ni pide clave.",
+  "evento": "XV años de Ximena (muestra)",
+  "modo": "demo",
+  "urlAppsScript": "",
+  "listaDemo": "demo-lista.json",
+  "colores": {
+    "papel": "#F6F1E7",
+    "principal": "#3F5743",
+    "dorado": "#B8924A",
+    "tinta": "#33402F"
+  }
+}

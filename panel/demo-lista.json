@@ -1,0 +1,136 @@
+{
+  "ok": true,
+  "panel": true,
+  "evento": "XV años de Ximena (muestra)",
+  "actualizado": "",
+  "totales": {
+    "personas": 21,
+    "familias": 8,
+    "noAsistiran": 3,
+    "faltan": 129,
+    "maximoPaquete": 150,
+    "duplicados": 1
+  },
+  "confirmaciones": [
+    {
+      "nombre": "Fam. Herrera Soto",
+      "asistira": "Sí",
+      "personas": 3,
+      "asistentes": "Ricardo, Elena, Santi",
+      "mensaje": "¡Ahí estaremos, Ximena!",
+      "fecha": "2027-02-11T19:04:00-06:00",
+      "telefono": "5510000000",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Tía Chelo y Tío Ramón",
+      "asistira": "Sí",
+      "personas": 2,
+      "asistentes": "Consuelo, Ramón",
+      "mensaje": "Felicidades, mija. No nos lo perdemos",
+      "fecha": "2027-02-10T21:15:00-06:00",
+      "telefono": "5510001111",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Fam. Ortega",
+      "asistira": "Sí",
+      "personas": 4,
+      "asistentes": "Arturo, Claudia, Iván, Sofi",
+      "mensaje": "",
+      "fecha": "2027-02-10T18:40:00-06:00",
+      "telefono": "5510002222",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Mariana Quiroz",
+      "asistira": "No",
+      "personas": 0,
+      "asistentes": "",
+      "mensaje": "Ese día estaré de viaje, ¡disfrútalo muchísimo!",
+      "fecha": "2027-02-10T13:22:00-06:00",
+      "telefono": "5510003333",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Los Medina",
+      "asistira": "Sí",
+      "personas": 4,
+      "asistentes": "Raúl, Ana, Toño, Fer",
+      "mensaje": "",
+      "fecha": "2027-02-09T20:05:00-06:00",
+      "telefono": "5510004444",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Fam. Castañeda",
+      "asistira": "Sí",
+      "personas": 3,
+      "asistentes": "Óscar, Laura, Mía",
+      "mensaje": "¡Qué emoción!",
+      "fecha": "2027-02-09T17:48:00-06:00",
+      "telefono": "5510005555",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Abuelita Tere",
+      "asistira": "Sí",
+      "personas": 1,
+      "asistentes": "Teresa",
+      "mensaje": "Te quiero mucho, mi niña",
+      "fecha": "2027-02-09T12:02:00-06:00",
+      "telefono": "5510006666",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Primos Treviño",
+      "asistira": "No",
+      "personas": 0,
+      "asistentes": "",
+      "mensaje": "",
+      "fecha": "2027-02-08T22:31:00-06:00",
+      "telefono": "5510007777",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Jorge y Liz",
+      "asistira": "Sí",
+      "personas": 2,
+      "asistentes": "Jorge, Lizbeth",
+      "mensaje": "",
+      "fecha": "2027-02-08T19:27:00-06:00",
+      "telefono": "5510008888",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Fam. Ortega",
+      "asistira": "Sí",
+      "personas": 3,
+      "asistentes": "Arturo, Claudia, Iván",
+      "mensaje": "",
+      "fecha": "2027-02-08T16:10:00-06:00",
+      "telefono": "5510009999",
+      "duplicado": "Posible duplicado: Fam. Ortega confirmó dos veces"
+    },
+    {
+      "nombre": "Paty y Beto Salinas",
+      "asistira": "Sí",
+      "personas": 2,
+      "asistentes": "Patricia, Alberto",
+      "mensaje": "Ahí nos vemos",
+      "fecha": "2027-02-07T11:44:00-06:00",
+      "telefono": "5510011110",
+      "duplicado": ""
+    },
+    {
+      "nombre": "Fam. Luján",
+      "asistira": "No",
+      "personas": 0,
+      "asistentes": "",
+      "mensaje": "Lo sentimos mucho, ¡felicidades!",
+      "fecha": "2027-02-07T09:05:00-06:00",
+      "telefono": "5510012221",
+      "duplicado": ""
+    }
+  ]
+}

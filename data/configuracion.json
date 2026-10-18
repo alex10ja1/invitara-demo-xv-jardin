@@ -1,0 +1,19 @@
+{
+  "_comentario": "Muestra de Invitara con datos inventados. Nada de esto es de una persona real.",
+  "evento": {
+    "festejada": "Ximena Robles",
+    "fechaHora": "2027-03-13T17:00:00-06:00",
+    "ciudad": "Querétaro, Querétaro"
+  },
+  "musica": { "archivo": "assets/audio/vals-ximena.mp3" },
+  "confirmacion": {
+    "modo": "demo",
+    "urlAppsScript": "",
+    "fechaLimite": "2027-03-01",
+    "maximoPersonas": 4,
+    "textoPase": "Pase familiar",
+    "mensajeExito": "¡Gracias! Tu confirmación quedó registrada.",
+    "etiquetaMensaje": "Mensaje para Ximena",
+    "textoPrivacidad": "Esta es una muestra: no se guarda ningún dato."
+  }
+}
