@@ -24,8 +24,8 @@
 </head>
 <body>
 
-  <!-- Figuras reutilizables: flor de 5 pétalos y hoja ovalada -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Figuras reutilizables: flor de 5 pétalos, hoja, ramita, íconos y texturas -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
       <symbol id="flor" viewBox="-50 -50 100 100">
         <g fill="currentColor">
@@ -35,6 +35,111 @@
         <circle r="15" fill="#B8924A"/>
       </symbol>
       <symbol id="hoja" viewBox="-50 -20 100 40"><ellipse rx="48" ry="17" fill="currentColor"/></symbol>
+      <!-- ramita: tallo dorado, hojas y dos flores (crece de abajo a la izquierda hacia arriba a la derecha) -->
+      <symbol id="ramita" viewBox="0 0 120 70">
+        <path d="M6 64C30 57 50 42 70 30S102 12 116 7" stroke="#B8924A" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="21" cy="52" rx="9" ry="3.6" transform="rotate(-52 21 52)" fill="#A9BCA0"/>
+        <ellipse cx="31" cy="61" rx="9" ry="3.6" transform="rotate(8 31 61)" fill="#5F7A61"/>
+        <ellipse cx="46" cy="36" rx="10" ry="4" transform="rotate(-62 46 36)" fill="#5F7A61"/>
+        <ellipse cx="57" cy="46" rx="10" ry="4" transform="rotate(-4 57 46)" fill="#A9BCA0"/>
+        <ellipse cx="84" cy="15" rx="9" ry="3.6" transform="rotate(-52 84 15)" fill="#A9BCA0"/>
+        <ellipse cx="93" cy="26" rx="9" ry="3.6" transform="rotate(4 93 26)" fill="#5F7A61"/>
+        <use href="#flor" x="61" y="17" width="22" height="22" style="color:#A9BCA0"/>
+        <use href="#flor" x="104" y="0" width="15" height="15" style="color:#5F7A61"/>
+        <circle cx="40" cy="48" r="1.8" fill="#B8924A"/><circle cx="76" cy="40" r="1.6" fill="#B8924A"/>
+      </symbol>
+      <!-- íconos de línea (verde y dorado) -->
+      <symbol id="ic-iglesia" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 41V24l9-9 9 9v17"/><path d="M15 29l-7 4v8M33 29l7 4v8"/><path d="M5 41h38"/>
+          <path d="M21 41v-6a3 3 0 0 1 6 0v6"/><circle cx="24" cy="24" r="2.4"/>
+        </g>
+        <path d="M24 4v10M20.5 7.5h7" stroke="#B8924A" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="ic-copas" viewBox="0 0 48 48">
+        <g transform="rotate(-14 17 26)">
+          <path d="M13.6 13.5h7l-.4 4.6a3.1 3.1 0 0 1-6.2 0z" fill="#D9C08C"/>
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 9h8l-.6 9.2a3.4 3.4 0 0 1-6.8 0z"/><path d="M17 21.6V37M13 37.5h8"/></g>
+        </g>
+        <g transform="rotate(14 31 26)">
+          <path d="M27.6 13.5h7l-.4 4.6a3.1 3.1 0 0 1-6.2 0z" fill="#D9C08C"/>
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M27 9h8l-.6 9.2a3.4 3.4 0 0 1-6.8 0z"/><path d="M31 21.6V37M27 37.5h8"/></g>
+        </g>
+        <g fill="#B8924A"><circle cx="24" cy="5" r="1.6"/><circle cx="20.5" cy="2.8" r="1.1"/><circle cx="27.6" cy="2.6" r="1.2"/></g>
+      </symbol>
+      <symbol id="ic-vals" viewBox="0 0 48 48">
+        <path d="M31 16.5l-2.4 6.5-6.6 17h18.4l-6.6-17z" fill="#D9C08C" opacity=".55"/>
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="16" cy="9.5" r="3.2"/><circle cx="31.5" cy="11" r="3.2"/>
+          <path d="M16 13.5v12.5l-3 14M16 26l3.4 14"/>
+          <path d="M31 16.5l-2.4 6.5-6.6 17h18.4l-6.6-17z"/>
+          <path d="M16 17.5c4 1.5 8.5 3.2 12.6 5.5"/><path d="M16 16l-3.5-6.5"/><path d="M31 17.5l4.5-5.5"/>
+        </g>
+        <path d="M6 33c1.5-2 3-2 4.5 0M37 7c1.5-2 3-2 4.5 0" stroke="#B8924A" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="ic-cena" viewBox="0 0 48 48">
+        <circle cx="24" cy="26" r="7" fill="none" stroke="#B8924A" stroke-width="1.6"/>
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="26" r="11.5"/>
+          <path d="M6 9v8a3 3 0 0 0 6 0V9M9 9v30"/><path d="M42 39V9c-3.2 2.2-4.4 7.4-4.4 13H42"/>
+        </g>
+      </symbol>
+      <symbol id="ic-baile" viewBox="0 0 48 48">
+        <g fill="currentColor"><ellipse cx="14.5" cy="36" rx="5" ry="3.6" transform="rotate(-22 14.5 36)"/><ellipse cx="34.5" cy="31" rx="5" ry="3.6" transform="rotate(-22 34.5 31)"/></g>
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 35V11l20-5v24"/></g>
+        <path d="M19 17.5l20-5" stroke="#B8924A" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M6 14c2-2.5 4-2.5 6 0M5 21c1.5-2 3-2 4.5 0" stroke="#B8924A" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="ic-regalo" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="20" width="30" height="20" rx="1.5"/><rect x="6" y="14" width="36" height="7" rx="1.5"/><path d="M24 14v26"/>
+        </g>
+        <path d="M24 14c-3-6-11-7-10-2 1 3 6 2 10 2zM24 14c3-6 11-7 10-2-1 3-6 2-10 2z" fill="none" stroke="#B8924A" stroke-width="2" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="ic-sobre" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="12" width="36" height="25" rx="2"/><path d="M6.6 13.5L24 27l17.4-13.5"/>
+        </g>
+        <circle cx="24" cy="27" r="3.4" fill="#B8924A"/>
+      </symbol>
+      <symbol id="ic-gancho" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 13a3 3 0 1 1 3 3c-1.5.4-3 1.3-3 3v1"/><path d="M24 20L7 32a2 2 0 0 0 1.2 3.6h31.6A2 2 0 0 0 41 32z"/>
+        </g>
+        <path d="M14 35.6h20" stroke="#B8924A" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <!-- forro del sobre: florecitas verde salvia sobre crema -->
+      <pattern id="forro" width="24" height="24" patternUnits="userSpaceOnUse">
+        <rect width="24" height="24" fill="#EEF1E7"/>
+        <g fill="#A9BCA0"><circle cx="6" cy="3.6" r="2"/><circle cx="8.3" cy="5.3" r="2"/><circle cx="7.4" cy="8" r="2"/><circle cx="4.6" cy="8" r="2"/><circle cx="3.7" cy="5.3" r="2"/></g>
+        <circle cx="6" cy="6" r="1.2" fill="#B8924A"/>
+        <ellipse cx="18" cy="17" rx="3.2" ry="1.3" transform="rotate(-35 18 17)" fill="#C3D0BC"/>
+        <ellipse cx="21" cy="19.6" rx="3.2" ry="1.3" transform="rotate(25 21 19.6)" fill="#C3D0BC"/>
+        <circle cx="16" cy="6" r=".9" fill="#C9B07A"/><circle cx="4" cy="18" r=".9" fill="#C9B07A"/>
+      </pattern>
+      <!-- grano de papel: ruido muy suave recortado a la figura -->
+      <filter id="grano" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="4" stitchTiles="stitch"/>
+        <feColorMatrix values="0 0 0 0 .42  0 0 0 0 .34  0 0 0 0 .2  0 0 0 .32 0"/>
+        <feComposite in2="SourceAlpha" operator="in"/>
+      </filter>
+      <linearGradient id="g-izq" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F8F3E8"/><stop offset="1" stop-color="#EEE5D3"/></linearGradient>
+      <linearGradient id="g-der" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#F8F3E8"/><stop offset="1" stop-color="#EEE5D3"/></linearGradient>
+      <linearGradient id="g-abajo" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F7F1E5"/><stop offset="1" stop-color="#F0E7D6"/></linearGradient>
+      <linearGradient id="g-solapa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6F0E4"/><stop offset="1" stop-color="#ECE1CC"/></linearGradient>
+      <linearGradient id="g-boca" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5A4A2E" stop-opacity=".22"/><stop offset="1" stop-color="#5A4A2E" stop-opacity="0"/></linearGradient>
+      <radialGradient id="g-cera" cx=".36" cy=".32" r=".75"><stop offset="0" stop-color="#86A487"/><stop offset=".45" stop-color="#557358"/><stop offset="1" stop-color="#2F4834"/></radialGradient>
+      <radialGradient id="g-brillo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      <filter id="f-pliegue" x="-10%" y="-20%" width="120%" height="140%"><feDropShadow dx="0" dy="-1.5" stdDeviation="2" flood-color="#5A4A2E" flood-opacity=".14"/></filter>
+      <filter id="f-lado" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#5A4A2E" flood-opacity=".12"/></filter>
+      <filter id="f-solapa" x="-10%" y="-10%" width="120%" height="135%"><feDropShadow dx="0" dy="3.5" stdDeviation="3.5" flood-color="#4A3C22" flood-opacity=".2"/></filter>
+      <filter id="f-sello" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#1F3023" flood-opacity=".38"/></filter>
+      <path id="p-izq" d="M0 0L152 108Q157 112 152 116L0 204Z"/>
+      <path id="p-der" d="M300 0L148 108Q143 112 148 116L300 204Z"/>
+      <path id="p-abajo" d="M0 204L141 97Q150 90 159 97L300 204Z"/>
+      <path id="p-solapa" d="M0 0H300L160 119Q150 127 140 119Z"/>
+      <path id="p-cera" d="M31.9 0.0C32.0 2.7 28.8 5.4 27.8 8.2C26.9 11.0 27.6 14.5 26.1 16.8C24.6 19.0 21.0 19.8 18.8 21.7C16.6 23.5 15.1 26.1 12.7 27.8C10.3 29.5 7.4 31.6 4.6 31.7C1.8 31.8 -1.2 29.0 -4.1 28.3C-6.9 27.7 -10.2 28.8 -12.6 27.7C-15.1 26.6 -16.6 23.5 -18.7 21.6C-20.8 19.7 -23.5 18.4 -25.4 16.3C-27.2 14.1 -29.1 11.4 -29.6 8.7C-30.2 6.0 -28.9 2.9 -28.8 0.0C-28.6 -2.9 -29.2 -5.6 -28.9 -8.5C-28.5 -11.3 -28.3 -14.9 -26.7 -17.1C-25.0 -19.4 -21.2 -19.9 -18.9 -21.8C-16.7 -23.8 -15.5 -27.2 -13.1 -28.6C-10.7 -30.1 -7.3 -30.1 -4.4 -30.6C-1.5 -31.1 1.7 -32.3 4.6 -31.9C7.4 -31.4 10.2 -29.5 12.8 -27.9C15.3 -26.4 16.9 -24.2 19.6 -22.7C22.3 -21.1 27.7 -21.1 29.0 -18.7C30.3 -16.2 27.0 -11.2 27.4 -8.1C27.9 -4.9 31.8 -2.7 31.9 0.0Z"/>
+      <g id="petalos-sello"><circle cx="0" cy="-26" r="24"/><circle cx="24.7" cy="-8" r="24"/><circle cx="15.3" cy="21" r="24"/><circle cx="-15.3" cy="21" r="24"/><circle cx="-24.7" cy="-8" r="24"/></g>
     </defs>
   </svg>
 
@@ -44,24 +149,82 @@
     <span class="aviso-muestra__cta">Pide la tuya →</span>
   </a>
 
-  <!-- ============== SOBRE DE APERTURA ============== -->
+  <!-- ============== SOBRE DE APERTURA (visto por detrás) ============== -->
   <div class="sobre" id="sobre" role="dialog" aria-label="Abre la invitación">
-    <p class="sobre__titulo">Tienes una invitación</p>
-    <button class="sobre__caja" id="abrir-sobre" type="button" aria-label="Abrir el sobre de la invitación">
-      <span class="sobre__fondo"></span>
-      <span class="sobre__carta"><small>XV</small><span>Ximena</span></span>
-      <span class="sobre__frente"></span>
-      <span class="sobre__solapa"></span>
-      <svg class="sobre__sello" viewBox="0 0 62 62" aria-hidden="true">
-        <path d="M31 2c5 0 7 3 11 4s8 1 10 5 0 7 2 11 5 7 4 11-5 5-6 9-1 8-5 10-7 0-11 2-6 5-10 5-6-4-10-5-8 0-10-4 0-7-2-11-5-6-4-10 4-6 5-10 1-8 5-10 7 0 11-2 6-5 10-5z" fill="#4E6B51"/>
-        <circle cx="31" cy="31" r="20" fill="none" stroke="#6E8C70" stroke-width="2"/>
-        <g transform="translate(31 31) scale(.26)" fill="#C9D6C1">
-          <circle cx="0" cy="-26" r="24"/><circle cx="24.7" cy="-8" r="24"/><circle cx="15.3" cy="21" r="24"/><circle cx="-15.3" cy="21" r="24"/><circle cx="-24.7" cy="-8" r="24"/>
-          <circle r="15" fill="#B8924A"/>
-        </g>
-      </svg>
-    </button>
-    <p class="sobre__toca">Toca para abrir</p>
+    <div class="sobre__centro">
+      <p class="sobre__titulo"><span>Tienes una invitación</span></p>
+      <button class="sobre__boton" id="abrir-sobre" type="button" aria-label="Abrir el sobre de la invitación">
+        <span class="sobre__flota">
+          <span class="sobre__caja">
+            <!-- interior: forro floral -->
+            <svg class="sobre__dorso" viewBox="0 0 300 204" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="300" height="204" rx="5" fill="#EADFCB"/>
+              <rect x="5" y="4" width="290" height="190" rx="2" fill="url(#forro)"/>
+              <rect x="5" y="4" width="290" height="26" fill="url(#g-boca)"/>
+            </svg>
+            <!-- carta -->
+            <span class="sobre__carta" aria-hidden="true">
+              <svg viewBox="0 0 26 26" width="26" height="26"><use href="#flor" width="26" height="26" style="color:#A9BCA0"/></svg>
+              <small>Mis XV años</small>
+              <span>Ximena</span>
+            </span>
+            <!-- bolsa: solapas laterales y de abajo -->
+            <svg class="sobre__bolsa" viewBox="0 0 300 204" preserveAspectRatio="none" aria-hidden="true">
+              <clipPath id="c-sobre"><rect width="300" height="204" rx="5"/></clipPath>
+              <g clip-path="url(#c-sobre)">
+                <use href="#p-izq" fill="url(#g-izq)"/>
+                <use href="#p-der" fill="url(#g-der)" filter="url(#f-lado)"/>
+                <use href="#p-abajo" fill="url(#g-abajo)" filter="url(#f-pliegue)"/>
+                <g filter="url(#grano)"><use href="#p-izq"/><use href="#p-der"/><use href="#p-abajo"/></g>
+                <!-- fibras del papel -->
+                <g fill="none" stroke="#9C8458" stroke-opacity=".12" stroke-width=".6" stroke-linecap="round">
+                  <path d="M30 150c8-3 15-2 22 1"/><path d="M220 172c9-4 18-3 25 0"/><path d="M250 60c4 5 6 9 6 15"/>
+                  <path d="M40 40c5 5 8 10 9 16"/><path d="M120 180c7 2 13 2 19-1"/><path d="M178 140c6-4 12-5 19-4"/>
+                </g>
+                <!-- líneas de pliegue -->
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M0 204L141 97Q150 90 159 97L300 204" stroke="#8A7244" stroke-opacity=".28" stroke-width=".9"/>
+                  <path d="M1 202L141 98.6Q150 92 159 98.6L299 202" stroke="#FFFDF8" stroke-opacity=".7" stroke-width=".7" transform="translate(0 1.4)"/>
+                  <path d="M0 0L137 97.5" stroke="#8A7244" stroke-opacity=".2" stroke-width=".8"/>
+                  <path d="M300 0L163 97.5" stroke="#8A7244" stroke-opacity=".2" stroke-width=".8"/>
+                </g>
+                <path d="M.5 1V199a4.5 4.5 0 0 0 4.5 4.5H295a4.5 4.5 0 0 0 4.5-4.5V1" fill="none" stroke="#C9B48A" stroke-opacity=".55"/>
+              </g>
+              <!-- ramita en la esquina -->
+              <use href="#ramita" x="8" y="146" width="96" height="56"/>
+            </svg>
+            <!-- solapa superior (cerrada); por dentro lleva el forro -->
+            <span class="sobre__solapa" aria-hidden="true">
+              <svg class="sobre__cara" viewBox="0 0 300 127" preserveAspectRatio="none">
+                <use href="#p-solapa" fill="url(#g-solapa)" filter="url(#f-solapa)"/>
+                <use href="#p-solapa" filter="url(#grano)"/>
+                <path d="M3 1.2H297" stroke="#FFFDF8" stroke-opacity=".8" stroke-width="1.2"/>
+                <path d="M0 0L140 119Q150 127 160 119L300 0" fill="none" stroke="#8A7244" stroke-opacity=".3" stroke-width=".9"/>
+              </svg>
+              <svg class="sobre__dorso-solapa" viewBox="0 0 300 127" preserveAspectRatio="none">
+                <g transform="translate(0 127) scale(1 -1)">
+                  <use href="#p-solapa" fill="#EADFCB"/>
+                  <path d="M10 5H290L157 113Q150 119 143 113Z" fill="url(#forro)"/>
+                </g>
+              </svg>
+            </span>
+            <!-- sello de cera -->
+            <svg class="sobre__sello" viewBox="-40 -40 80 80" aria-hidden="true">
+              <g filter="url(#f-sello)"><use href="#p-cera" fill="url(#g-cera)"/></g>
+              <circle r="21.5" fill="none" stroke="#2C4430" stroke-opacity=".55" stroke-width="2.2" transform="translate(.7 .9)"/>
+              <circle r="21.5" fill="none" stroke="#9DB89D" stroke-opacity=".6" stroke-width="1.4"/>
+              <g transform="translate(.9 1.1) scale(.27)" fill="#243A28" opacity=".55"><use href="#petalos-sello"/></g>
+              <g transform="translate(-.5 -.6) scale(.27)" fill="#B9CDB4" opacity=".7"><use href="#petalos-sello"/></g>
+              <g transform="scale(.27)" fill="#6B8B6D"><use href="#petalos-sello"/></g>
+              <circle r="4.2" fill="#B8924A"/><circle r="4.2" cx="-.6" cy="-.7" fill="#E3CB92" opacity=".6"/>
+              <ellipse cx="-11" cy="-15" rx="12" ry="7" transform="rotate(-30 -11 -15)" fill="url(#g-brillo)"/>
+            </svg>
+          </span>
+        </span>
+        <span class="sobre__sombra" aria-hidden="true"></span>
+      </button>
+      <p class="sobre__toca"><span>Toca para abrir</span></p>
+    </div>
   </div>
 
   <button class="boton-musica" id="boton-musica" type="button" aria-label="Reproducir música" hidden>
@@ -103,228 +266,287 @@
 
     <!-- ============== FRASE ============== -->
     <section class="seccion" id="frase" aria-label="Frase">
-      <div class="revelar">
-        <svg width="70" height="40" viewBox="0 0 70 40" style="margin:0 auto 14px" aria-hidden="true">
-          <use href="#hoja" x="0" y="12" width="34" height="14" style="color:#A9BCA0"/><use href="#hoja" x="36" y="12" width="34" height="14" style="color:#A9BCA0"/>
-          <use class="flor-crece" href="#flor" x="22" y="6" width="26" height="26" style="color:#5F7A61"/>
-        </svg>
+      <div class="seccion__in revelar">
+        <svg class="adorno" width="120" height="70" viewBox="0 0 120 70" aria-hidden="true"><use href="#ramita" width="120" height="70"/></svg>
         <p class="frase">“Hay momentos que se viven una sola vez, y quiero que tú seas parte de este.”</p>
+        <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
       </div>
     </section>
 
     <!-- ============== CUENTA REGRESIVA ============== -->
-    <section class="seccion" id="cuenta-regresiva" aria-labelledby="t-cuenta">
-      <div class="revelar">
-        <p class="eyebrow">Ya casi</p>
-        <h2 class="titulo" id="t-cuenta">Cuenta regresiva</h2>
+    <section class="seccion seccion--clara" id="cuenta-regresiva" aria-labelledby="t-cuenta">
+      <svg class="esquina" viewBox="0 0 120 70" aria-hidden="true"><use href="#ramita" width="120" height="70"/></svg>
+      <div class="seccion__in revelar">
+        <div class="encabezado">
+          <p class="eyebrow">Ya casi</p>
+          <h2 class="titulo" id="t-cuenta">Cuenta regresiva</h2>
+          <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
+        </div>
         <div class="cuenta" role="timer" aria-live="off">
           <div class="cuenta__caja"><span class="cuenta__num" id="c-dias">00</span><span class="cuenta__txt">días</span></div>
           <div class="cuenta__caja"><span class="cuenta__num" id="c-horas">00</span><span class="cuenta__txt">horas</span></div>
           <div class="cuenta__caja"><span class="cuenta__num" id="c-min">00</span><span class="cuenta__txt">min</span></div>
           <div class="cuenta__caja"><span class="cuenta__num" id="c-seg">00</span><span class="cuenta__txt">seg</span></div>
         </div>
+        <p class="cuenta__fecha">Sábado 13 de marzo de 2027 · 5:00 pm</p>
       </div>
     </section>
 
     <!-- ============== FAMILIA ============== -->
     <section class="seccion" id="familia" aria-labelledby="t-familia">
-      <div class="revelar">
-        <p class="eyebrow">Con la bendición de Dios</p>
-        <h2 class="titulo" id="t-familia">Y de mis seres queridos</h2>
+      <div class="seccion__in revelar">
+        <div class="encabezado">
+          <p class="eyebrow">Con la bendición de Dios</p>
+          <h2 class="titulo" id="t-familia">Y de mis seres queridos</h2>
+          <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
+        </div>
         <div class="familia">
           <div><h3>Mis papás</h3><p>Laura Méndez<br>y Roberto Robles</p></div>
           <div><h3>Mis padrinos</h3><p>Ana Torres<br>y Luis Fernández</p></div>
         </div>
       </div>
+      <svg class="esquina esquina--abajo" viewBox="0 0 120 70" aria-hidden="true"><use href="#ramita" width="120" height="70"/></svg>
     </section>
 
     <!-- ============== LUGARES ============== -->
-    <section class="seccion seccion--ancha" id="ubicacion" aria-labelledby="t-lugares">
-      <div class="revelar">
-        <p class="eyebrow">Sábado 13 de marzo · 2027</p>
-        <h2 class="titulo" id="t-lugares">Dónde y cuándo</h2>
-      </div>
-      <div class="lugares">
-        <article class="lugar revelar" aria-labelledby="l-misa">
-          <span class="lugar__tipo">Misa</span>
-          <span class="lugar__hora">5:00 pm</span>
-          <h3 class="lugar__nombre" id="l-misa">Parroquia de San José</h3>
-          <p class="lugar__dir">Av. de los Jardines 120, Centro · Querétaro</p>
-          <button class="boton boton--borde" type="button" data-mapa="mapa-misa" aria-expanded="false" aria-controls="mapa-misa">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Cómo llegar</button>
-          <div class="mapa" id="mapa-misa"><div>
-            <svg viewBox="0 0 320 190" role="img" aria-label="Mapa ilustrado de la parroquia"><rect width="320" height="190" fill="#EFE7D8"/>
-              <rect x="210" y="16" width="90" height="62" rx="8" fill="#DCE5D6"/><rect x="22" y="116" width="78" height="56" rx="8" fill="#E7DCC6"/>
-              <g stroke="#FFFDF8" stroke-linecap="round" fill="none"><path d="M-5 96H325" stroke-width="13"/><path d="M160 -5V195" stroke-width="13"/><path d="M-5 34L325 56" stroke-width="7"/><path d="M64 -5V195" stroke-width="7"/><path d="M256 -5V195" stroke-width="7"/></g>
-              <path d="M64 170V96H160V60" stroke="#5F7A61" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 9"/>
-              <circle cx="64" cy="170" r="7" fill="#FFFDF8" stroke="#3F5743" stroke-width="4"/>
-              <g transform="translate(160 60)"><path d="M0 0C-4-11-16-20-16-32A16 16 0 1 1 16-32C16-20 4-11 0 0Z" fill="#3F5743"/><circle cy="-32" r="6" fill="#D9C08C"/></g></svg>
-            <a class="boton" href="https://www.google.com/maps/search/?api=1&amp;query=Iglesia%20Centro%20Quer%C3%A9taro" target="_blank" rel="noopener">Abrir en Google Maps</a>
-            <p class="mapa__nota">Muestra: la búsqueda es genérica, no lleva a un lugar real.</p>
-          </div></div>
-        </article>
-        <article class="lugar revelar" aria-labelledby="l-recepcion">
-          <span class="lugar__tipo">Recepción</span>
-          <span class="lugar__hora">7:00 pm</span>
-          <h3 class="lugar__nombre" id="l-recepcion">Jardín Las Palmas</h3>
-          <p class="lugar__dir">Camino Real 45, Col. Las Flores · Querétaro</p>
-          <button class="boton boton--borde" type="button" data-mapa="mapa-recepcion" aria-expanded="false" aria-controls="mapa-recepcion">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Cómo llegar</button>
-          <div class="mapa" id="mapa-recepcion"><div>
-            <svg viewBox="0 0 320 190" role="img" aria-label="Mapa ilustrado del jardín"><rect width="320" height="190" fill="#EFE7D8"/>
-              <rect x="170" y="104" width="130" height="72" rx="10" fill="#DCE5D6"/><rect x="18" y="14" width="96" height="58" rx="8" fill="#E7DCC6"/>
-              <g stroke="#FFFDF8" stroke-linecap="round" fill="none"><path d="M-5 88C80 76 200 100 325 82" stroke-width="13"/><path d="M140 -5V195" stroke-width="10"/><path d="M-5 150H325" stroke-width="7"/><path d="M262 -5V195" stroke-width="7"/></g>
-              <path d="M30 150H140V86L236 92V136" stroke="#5F7A61" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 9"/>
-              <circle cx="30" cy="150" r="7" fill="#FFFDF8" stroke="#3F5743" stroke-width="4"/>
-              <g transform="translate(236 136)"><path d="M0 0C-4-11-16-20-16-32A16 16 0 1 1 16-32C16-20 4-11 0 0Z" fill="#3F5743"/><circle cy="-32" r="6" fill="#D9C08C"/></g></svg>
-            <a class="boton" href="https://www.google.com/maps/search/?api=1&amp;query=Jard%C3%ADn%20de%20eventos%20Quer%C3%A9taro" target="_blank" rel="noopener">Abrir en Google Maps</a>
-            <p class="mapa__nota">Muestra: la búsqueda es genérica, no lleva a un lugar real.</p>
-          </div></div>
-        </article>
+    <section class="seccion seccion--clara" id="ubicacion" aria-labelledby="t-lugares">
+      <svg class="esquina" viewBox="0 0 120 70" aria-hidden="true"><use href="#ramita" width="120" height="70"/></svg>
+      <div class="seccion__in">
+        <div class="encabezado revelar">
+          <p class="eyebrow">Sábado 13 de marzo · 2027</p>
+          <h2 class="titulo" id="t-lugares">Dónde y cuándo</h2>
+          <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
+        </div>
+        <div class="lugares">
+          <article class="lugar revelar" aria-labelledby="l-misa">
+            <span class="icono-circulo" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-iglesia" width="48" height="48"/></svg></span>
+            <span class="lugar__tipo">Misa</span>
+            <span class="lugar__hora">5:00 pm</span>
+            <h3 class="lugar__nombre" id="l-misa">Parroquia de San José</h3>
+            <p class="lugar__dir">Av. de los Jardines 120, Centro · Querétaro</p>
+            <button class="boton" type="button" data-mapa="mapa-misa" aria-expanded="false" aria-controls="mapa-misa">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Cómo llegar</button>
+            <div class="mapa" id="mapa-misa"><div>
+              <svg viewBox="0 0 320 190" role="img" aria-label="Mapa ilustrado de la parroquia"><rect width="320" height="190" fill="#EFE7D8"/>
+                <rect x="210" y="16" width="90" height="62" rx="8" fill="#DCE5D6"/><rect x="22" y="116" width="78" height="56" rx="8" fill="#E7DCC6"/>
+                <g stroke="#FFFDF8" stroke-linecap="round" fill="none"><path d="M-5 96H325" stroke-width="13"/><path d="M160 -5V195" stroke-width="13"/><path d="M-5 34L325 56" stroke-width="7"/><path d="M64 -5V195" stroke-width="7"/><path d="M256 -5V195" stroke-width="7"/></g>
+                <path d="M64 170V96H160V60" stroke="#5F7A61" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 9"/>
+                <circle cx="64" cy="170" r="7" fill="#FFFDF8" stroke="#3F5743" stroke-width="4"/>
+                <g transform="translate(160 60)"><path d="M0 0C-4-11-16-20-16-32A16 16 0 1 1 16-32C16-20 4-11 0 0Z" fill="#3F5743"/><circle cy="-32" r="6" fill="#D9C08C"/></g></svg>
+              <a class="boton" href="https://www.google.com/maps/search/?api=1&amp;query=Iglesia%20Centro%20Quer%C3%A9taro" target="_blank" rel="noopener">Abrir en Google Maps</a>
+              <p class="mapa__nota">Muestra: la búsqueda es genérica, no lleva a un lugar real.</p>
+            </div></div>
+          </article>
+          <article class="lugar revelar" aria-labelledby="l-recepcion">
+            <span class="icono-circulo" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-copas" width="48" height="48"/></svg></span>
+            <span class="lugar__tipo">Recepción</span>
+            <span class="lugar__hora">7:00 pm</span>
+            <h3 class="lugar__nombre" id="l-recepcion">Jardín Las Palmas</h3>
+            <p class="lugar__dir">Camino Real 45, Col. Las Flores · Querétaro</p>
+            <button class="boton" type="button" data-mapa="mapa-recepcion" aria-expanded="false" aria-controls="mapa-recepcion">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Cómo llegar</button>
+            <div class="mapa" id="mapa-recepcion"><div>
+              <svg viewBox="0 0 320 190" role="img" aria-label="Mapa ilustrado del jardín"><rect width="320" height="190" fill="#EFE7D8"/>
+                <rect x="170" y="104" width="130" height="72" rx="10" fill="#DCE5D6"/><rect x="18" y="14" width="96" height="58" rx="8" fill="#E7DCC6"/>
+                <g stroke="#FFFDF8" stroke-linecap="round" fill="none"><path d="M-5 88C80 76 200 100 325 82" stroke-width="13"/><path d="M140 -5V195" stroke-width="10"/><path d="M-5 150H325" stroke-width="7"/><path d="M262 -5V195" stroke-width="7"/></g>
+                <path d="M30 150H140V86L236 92V136" stroke="#5F7A61" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 9"/>
+                <circle cx="30" cy="150" r="7" fill="#FFFDF8" stroke="#3F5743" stroke-width="4"/>
+                <g transform="translate(236 136)"><path d="M0 0C-4-11-16-20-16-32A16 16 0 1 1 16-32C16-20 4-11 0 0Z" fill="#3F5743"/><circle cy="-32" r="6" fill="#D9C08C"/></g></svg>
+              <a class="boton" href="https://www.google.com/maps/search/?api=1&amp;query=Jard%C3%ADn%20de%20eventos%20Quer%C3%A9taro" target="_blank" rel="noopener">Abrir en Google Maps</a>
+              <p class="mapa__nota">Muestra: la búsqueda es genérica, no lleva a un lugar real.</p>
+            </div></div>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- ============== ITINERARIO ============== -->
     <section class="seccion" id="itinerario" aria-labelledby="t-itinerario">
-      <div class="revelar">
-        <p class="eyebrow">Así será la noche</p>
-        <h2 class="titulo" id="t-itinerario">Itinerario</h2>
-        <ol class="itinerario">
-          <li><time>5:00</time><span class="punto" aria-hidden="true"><i></i></span><span>Misa</span></li>
-          <li><time>7:00</time><span class="punto" aria-hidden="true"><i></i></span><span>Recepción</span></li>
-          <li><time>8:00</time><span class="punto" aria-hidden="true"><i></i></span><span>Vals</span></li>
-          <li><time>8:30</time><span class="punto" aria-hidden="true"><i></i></span><span>Cena</span></li>
-          <li><time>9:30</time><span class="punto" aria-hidden="true"><i></i></span><span>¡A bailar!</span></li>
-        </ol>
+      <div class="seccion__in">
+        <div class="encabezado revelar">
+          <p class="eyebrow">Así será la noche</p>
+          <h2 class="titulo" id="t-itinerario">Itinerario</h2>
+          <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
+        </div>
+        <div class="itin" id="itin">
+          <span class="itin__linea" aria-hidden="true"></span>
+          <svg class="itin__flor" viewBox="0 0 34 34" aria-hidden="true"><use href="#flor" width="34" height="34" style="color:#A9BCA0"/></svg>
+          <ol class="itin__lista">
+            <li class="itin__item revelar" style="--i:0">
+              <span class="itin__icono" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-iglesia" width="48" height="48"/></svg></span>
+              <div class="itin__tarjeta"><time datetime="17:00">5:00 pm</time><h3>Misa</h3><p>Parroquia de San José</p></div>
+            </li>
+            <li class="itin__item revelar" style="--i:1">
+              <span class="itin__icono" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-copas" width="48" height="48"/></svg></span>
+              <div class="itin__tarjeta"><time datetime="19:00">7:00 pm</time><h3>Recepción</h3><p>Jardín Las Palmas</p></div>
+            </li>
+            <li class="itin__item revelar" style="--i:2">
+              <span class="itin__icono" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-vals" width="48" height="48"/></svg></span>
+              <div class="itin__tarjeta"><time datetime="20:00">8:00 pm</time><h3>Vals</h3><p>Ximena y sus chambelanes</p></div>
+            </li>
+            <li class="itin__item revelar" style="--i:3">
+              <span class="itin__icono" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-cena" width="48" height="48"/></svg></span>
+              <div class="itin__tarjeta"><time datetime="20:30">8:30 pm</time><h3>Cena</h3><p>Cena de tres tiempos</p></div>
+            </li>
+            <li class="itin__item revelar" style="--i:4">
+              <span class="itin__icono" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-baile" width="48" height="48"/></svg></span>
+              <div class="itin__tarjeta"><time datetime="21:30">9:30 pm</time><h3>¡A bailar!</h3><p>Hasta que el cuerpo aguante</p></div>
+            </li>
+          </ol>
+        </div>
+        <p class="itin__cierre revelar">Gracias por ser parte de esta noche</p>
       </div>
     </section>
 
     <!-- ============== VESTIMENTA ============== -->
-    <section class="seccion" id="vestimenta" aria-labelledby="t-vestimenta">
-      <div class="revelar">
-        <p class="eyebrow">Código de vestimenta</p>
-        <h2 class="titulo" id="t-vestimenta">Formal</h2>
-        <p class="texto">Te pedimos evitar el color verde salvia, reservado para la quinceañera.</p>
-        <div class="vestimenta" aria-hidden="true">
-          <span class="muestra-color" style="background:#A9BCA0"></span>
-          <svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="none" stroke="#B8924A" stroke-width="2"/><path d="M8 32L32 8" stroke="#B8924A" stroke-width="2"/></svg>
+    <section class="seccion seccion--clara" id="vestimenta" aria-labelledby="t-vestimenta">
+      <svg class="esquina" viewBox="0 0 120 70" aria-hidden="true"><use href="#ramita" width="120" height="70"/></svg>
+      <div class="seccion__in revelar">
+        <div class="encabezado">
+          <p class="eyebrow">Código de vestimenta</p>
+          <h2 class="titulo" id="t-vestimenta">Formal</h2>
+          <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
+        </div>
+        <div class="vestimenta">
+          <span class="icono-circulo" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-gancho" width="48" height="48"/></svg></span>
+          <p class="texto">Te pedimos evitar el color verde salvia, reservado para la quinceañera.</p>
+          <div class="vestimenta__color">
+            <span class="muestra-color" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M8 36L36 8" stroke="#FFFDF8" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+            <span>Verde salvia, solo para Ximena</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============== GALERÍA ============== -->
-    <section class="seccion seccion--ancha" id="galeria" aria-labelledby="t-galeria">
-      <div class="revelar">
-        <p class="eyebrow">Momentos</p>
-        <h2 class="titulo" id="t-galeria">Galería</h2>
-        <p class="texto">En tu invitación aquí van tus fotos.</p>
+    <section class="seccion" id="galeria" aria-labelledby="t-galeria">
+      <div class="seccion__in">
+        <div class="encabezado revelar">
+          <p class="eyebrow">Momentos</p>
+          <h2 class="titulo" id="t-galeria">Galería</h2>
+          <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
+          <p class="texto" style="margin-top:16px">En tu invitación aquí van tus fotos.</p>
+        </div>
+        <div class="galeria revelar" id="galeria-lista">
+          <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: ramo de flores">
+            <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
+              <path d="M150 380L120 230M150 380L150 225M150 380L180 230" stroke="#5F7A61" stroke-width="6" stroke-linecap="round"/>
+              <path d="M112 300h76l-12 34h-52z" fill="#B8924A"/><path d="M118 300c10 12 54 12 64 0" stroke="#F6F1E7" stroke-width="3" fill="none"/>
+              <use href="#hoja" x="62" y="196" width="80" height="30" style="color:#A9BCA0" transform="rotate(-30 102 211)"/>
+              <use href="#hoja" x="158" y="196" width="80" height="30" style="color:#A9BCA0" transform="rotate(30 198 211)"/>
+              <use href="#flor" x="64" y="130" width="84" height="84" style="color:#A9BCA0"/><use href="#flor" x="152" y="130" width="84" height="84" style="color:#A9BCA0"/>
+              <use href="#flor" x="100" y="86" width="100" height="100" style="color:#5F7A61"/></svg>
+            <figcaption>Ramo</figcaption></figure>
+          <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: pastel">
+            <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
+              <ellipse cx="150" cy="340" rx="110" ry="14" fill="#D9C08C"/>
+              <rect x="60" y="250" width="180" height="88" rx="8" fill="#FFFDF8" stroke="#D9C08C" stroke-width="3"/>
+              <rect x="84" y="176" width="132" height="76" rx="8" fill="#FFFDF8" stroke="#D9C08C" stroke-width="3"/>
+              <rect x="108" y="116" width="84" height="62" rx="8" fill="#FFFDF8" stroke="#D9C08C" stroke-width="3"/>
+              <path d="M60 272c20 14 40 14 60 0s40-14 60 0 40 14 60 0" stroke="#A9BCA0" stroke-width="6" fill="none"/>
+              <path d="M84 196c16 12 33 12 44 0s33-12 44 0 28 12 44 0" stroke="#A9BCA0" stroke-width="5" fill="none"/>
+              <use href="#flor" x="126" y="78" width="48" height="48" style="color:#5F7A61"/>
+              <text x="150" y="306" text-anchor="middle" font-family="Italiana, serif" font-size="34" fill="#B8924A">XV</text></svg>
+            <figcaption>Pastel</figcaption></figure>
+          <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: zapatillas de tacón">
+            <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
+              <g fill="#5F7A61"><path d="M40 290c40 0 70-10 96-44l12 0c6 22 2 46-14 56H48c-8 0-12-6-8-12z"/><rect x="136" y="246" width="12" height="78" rx="4"/></g>
+              <g fill="#3F5743" transform="translate(110 30)"><path d="M40 290c40 0 70-10 96-44l12 0c6 22 2 46-14 56H48c-8 0-12-6-8-12z"/><rect x="136" y="246" width="12" height="78" rx="4"/></g>
+              <use href="#flor" x="62" y="262" width="26" height="26" style="color:#D9C08C"/><use href="#flor" x="172" y="292" width="26" height="26" style="color:#D9C08C"/>
+              <ellipse cx="150" cy="358" rx="120" ry="8" fill="#D9C08C" opacity=".6"/></svg>
+            <figcaption>Zapatillas</figcaption></figure>
+          <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: copas">
+            <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
+              <g transform="rotate(-12 110 220)"><path d="M80 120h60c0 50-12 80-30 84-18-4-30-34-30-84z" fill="#FFFDF8" stroke="#B8924A" stroke-width="4"/><path d="M84 150h52c-2 30-10 46-26 50-16-4-24-20-26-50z" fill="#D9C08C"/><path d="M110 204v86M86 292h48" stroke="#B8924A" stroke-width="5" stroke-linecap="round"/></g>
+              <g transform="rotate(12 190 220)"><path d="M160 120h60c0 50-12 80-30 84-18-4-30-34-30-84z" fill="#FFFDF8" stroke="#B8924A" stroke-width="4"/><path d="M164 150h52c-2 30-10 46-26 50-16-4-24-20-26-50z" fill="#D9C08C"/><path d="M190 204v86M166 292h48" stroke="#B8924A" stroke-width="5" stroke-linecap="round"/></g>
+              <circle cx="150" cy="96" r="5" fill="#A9BCA0"/><circle cx="132" cy="76" r="3.5" fill="#A9BCA0"/><circle cx="170" cy="70" r="4" fill="#A9BCA0"/>
+              <use href="#flor" x="126" y="300" width="48" height="48" style="color:#5F7A61"/></svg>
+            <figcaption>Brindis</figcaption></figure>
+          <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: vestido">
+            <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
+              <path d="M150 40v26" stroke="#B8924A" stroke-width="3"/><path d="M136 66h28l-4 20h-20z" fill="#B8924A"/>
+              <path d="M126 86h48l6 70H120z" fill="#A9BCA0"/>
+              <path d="M120 156h60c40 60 70 130 86 190H34c16-60 46-130 86-190z" fill="#A9BCA0"/>
+              <path d="M120 156c-12 70-30 130-46 190M180 156c12 70 30 130 46 190M150 156v190" stroke="#5F7A61" stroke-width="2" opacity=".5" fill="none"/>
+              <path d="M118 156h64" stroke="#B8924A" stroke-width="5"/>
+              <use href="#flor" x="60" y="300" width="34" height="34" style="color:#FFFDF8"/><use href="#flor" x="206" y="300" width="34" height="34" style="color:#FFFDF8"/><use href="#flor" x="136" y="316" width="28" height="28" style="color:#FFFDF8"/></svg>
+            <figcaption>Vestido</figcaption></figure>
+          <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: letrero XV">
+            <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
+              <path d="M100 360L120 250M200 360L180 250" stroke="#B8924A" stroke-width="6" stroke-linecap="round"/>
+              <rect x="60" y="110" width="180" height="150" fill="#FFFDF8" stroke="#B8924A" stroke-width="4"/>
+              <rect x="70" y="120" width="160" height="130" fill="none" stroke="#A9BCA0" stroke-width="2"/>
+              <text x="150" y="214" text-anchor="middle" font-family="Italiana, serif" font-size="78" fill="#B8924A">XV</text>
+              <use href="#hoja" x="22" y="94" width="70" height="26" style="color:#A9BCA0" transform="rotate(-30 57 107)"/>
+              <use href="#flor" x="34" y="78" width="60" height="60" style="color:#5F7A61"/><use href="#flor" x="212" y="232" width="50" height="50" style="color:#A9BCA0"/></svg>
+            <figcaption>Letrero</figcaption></figure>
+        </div>
+        <div class="hashtag-caja revelar">
+          <p class="eyebrow">Comparte tus fotos con</p>
+          <p class="hashtag">#XVXimena</p>
+        </div>
       </div>
-      <div class="galeria revelar" id="galeria-lista">
-        <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: ramo de flores">
-          <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
-            <path d="M150 380L120 230M150 380L150 225M150 380L180 230" stroke="#5F7A61" stroke-width="6" stroke-linecap="round"/>
-            <path d="M112 300h76l-12 34h-52z" fill="#B8924A"/><path d="M118 300c10 12 54 12 64 0" stroke="#F6F1E7" stroke-width="3" fill="none"/>
-            <use href="#hoja" x="62" y="196" width="80" height="30" style="color:#A9BCA0" transform="rotate(-30 102 211)"/>
-            <use href="#hoja" x="158" y="196" width="80" height="30" style="color:#A9BCA0" transform="rotate(30 198 211)"/>
-            <use href="#flor" x="64" y="130" width="84" height="84" style="color:#A9BCA0"/><use href="#flor" x="152" y="130" width="84" height="84" style="color:#A9BCA0"/>
-            <use href="#flor" x="100" y="86" width="100" height="100" style="color:#5F7A61"/></svg>
-          <figcaption>Ramo</figcaption></figure>
-        <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: pastel">
-          <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
-            <ellipse cx="150" cy="340" rx="110" ry="14" fill="#D9C08C"/>
-            <rect x="60" y="250" width="180" height="88" rx="8" fill="#FFFDF8" stroke="#D9C08C" stroke-width="3"/>
-            <rect x="84" y="176" width="132" height="76" rx="8" fill="#FFFDF8" stroke="#D9C08C" stroke-width="3"/>
-            <rect x="108" y="116" width="84" height="62" rx="8" fill="#FFFDF8" stroke="#D9C08C" stroke-width="3"/>
-            <path d="M60 272c20 14 40 14 60 0s40-14 60 0 40 14 60 0" stroke="#A9BCA0" stroke-width="6" fill="none"/>
-            <path d="M84 196c16 12 33 12 44 0s33-12 44 0 28 12 44 0" stroke="#A9BCA0" stroke-width="5" fill="none"/>
-            <use href="#flor" x="126" y="78" width="48" height="48" style="color:#5F7A61"/>
-            <text x="150" y="306" text-anchor="middle" font-family="Italiana, serif" font-size="34" fill="#B8924A">XV</text></svg>
-          <figcaption>Pastel</figcaption></figure>
-        <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: zapatillas de tacón">
-          <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
-            <g fill="#5F7A61"><path d="M40 290c40 0 70-10 96-44l12 0c6 22 2 46-14 56H48c-8 0-12-6-8-12z"/><rect x="136" y="246" width="12" height="78" rx="4"/></g>
-            <g fill="#3F5743" transform="translate(110 30)"><path d="M40 290c40 0 70-10 96-44l12 0c6 22 2 46-14 56H48c-8 0-12-6-8-12z"/><rect x="136" y="246" width="12" height="78" rx="4"/></g>
-            <use href="#flor" x="62" y="262" width="26" height="26" style="color:#D9C08C"/><use href="#flor" x="172" y="292" width="26" height="26" style="color:#D9C08C"/>
-            <ellipse cx="150" cy="358" rx="120" ry="8" fill="#D9C08C" opacity=".6"/></svg>
-          <figcaption>Zapatillas</figcaption></figure>
-        <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: copas">
-          <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
-            <g transform="rotate(-12 110 220)"><path d="M80 120h60c0 50-12 80-30 84-18-4-30-34-30-84z" fill="#FFFDF8" stroke="#B8924A" stroke-width="4"/><path d="M84 150h52c-2 30-10 46-26 50-16-4-24-20-26-50z" fill="#D9C08C"/><path d="M110 204v86M86 292h48" stroke="#B8924A" stroke-width="5" stroke-linecap="round"/></g>
-            <g transform="rotate(12 190 220)"><path d="M160 120h60c0 50-12 80-30 84-18-4-30-34-30-84z" fill="#FFFDF8" stroke="#B8924A" stroke-width="4"/><path d="M164 150h52c-2 30-10 46-26 50-16-4-24-20-26-50z" fill="#D9C08C"/><path d="M190 204v86M166 292h48" stroke="#B8924A" stroke-width="5" stroke-linecap="round"/></g>
-            <circle cx="150" cy="96" r="5" fill="#A9BCA0"/><circle cx="132" cy="76" r="3.5" fill="#A9BCA0"/><circle cx="170" cy="70" r="4" fill="#A9BCA0"/>
-            <use href="#flor" x="126" y="300" width="48" height="48" style="color:#5F7A61"/></svg>
-          <figcaption>Brindis</figcaption></figure>
-        <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: vestido">
-          <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
-            <path d="M150 40v26" stroke="#B8924A" stroke-width="3"/><path d="M136 66h28l-4 20h-20z" fill="#B8924A"/>
-            <path d="M126 86h48l6 70H120z" fill="#A9BCA0"/>
-            <path d="M120 156h60c40 60 70 130 86 190H34c16-60 46-130 86-190z" fill="#A9BCA0"/>
-            <path d="M120 156c-12 70-30 130-46 190M180 156c12 70 30 130 46 190M150 156v190" stroke="#5F7A61" stroke-width="2" opacity=".5" fill="none"/>
-            <path d="M118 156h64" stroke="#B8924A" stroke-width="5"/>
-            <use href="#flor" x="60" y="300" width="34" height="34" style="color:#FFFDF8"/><use href="#flor" x="206" y="300" width="34" height="34" style="color:#FFFDF8"/><use href="#flor" x="136" y="316" width="28" height="28" style="color:#FFFDF8"/></svg>
-          <figcaption>Vestido</figcaption></figure>
-        <figure class="foto" tabindex="0" role="button" aria-label="Ver ilustración: letrero XV">
-          <svg viewBox="0 0 300 400" aria-hidden="true"><rect width="300" height="400" fill="#EFE7D8"/>
-            <path d="M100 360L120 250M200 360L180 250" stroke="#B8924A" stroke-width="6" stroke-linecap="round"/>
-            <rect x="60" y="110" width="180" height="150" fill="#FFFDF8" stroke="#B8924A" stroke-width="4"/>
-            <rect x="70" y="120" width="160" height="130" fill="none" stroke="#A9BCA0" stroke-width="2"/>
-            <text x="150" y="214" text-anchor="middle" font-family="Italiana, serif" font-size="78" fill="#B8924A">XV</text>
-            <use href="#hoja" x="22" y="94" width="70" height="26" style="color:#A9BCA0" transform="rotate(-30 57 107)"/>
-            <use href="#flor" x="34" y="78" width="60" height="60" style="color:#5F7A61"/><use href="#flor" x="212" y="232" width="50" height="50" style="color:#A9BCA0"/></svg>
-          <figcaption>Letrero</figcaption></figure>
-      </div>
-      <div class="revelar" style="margin-top:38px">
-        <p class="eyebrow">Comparte tus fotos con</p>
-        <p class="hashtag">#XVXimena</p>
-      </div>
+      <svg class="esquina esquina--abajo" viewBox="0 0 120 70" aria-hidden="true"><use href="#ramita" width="120" height="70"/></svg>
     </section>
 
     <!-- ============== MESA DE REGALOS ============== -->
-    <section class="seccion seccion--ancha" id="regalos" aria-labelledby="t-regalos">
-      <div class="revelar">
-        <p class="eyebrow">Si deseas hacerme un regalo</p>
-        <h2 class="titulo" id="t-regalos">Mesa de regalos</h2>
-      </div>
-      <div class="regalos revelar">
-        <div class="regalo">
-          <span class="lugar__tipo">Tienda departamental</span>
-          <h3>Liverpool · Evento 51234567</h3>
-          <p>(muestra)</p>
-          <button class="boton boton--borde" type="button" data-regalo>Ver mesa de regalos</button>
-          <p class="aviso-regalo" aria-live="polite"></p>
+    <section class="seccion seccion--clara" id="regalos" aria-labelledby="t-regalos">
+      <svg class="esquina" viewBox="0 0 120 70" aria-hidden="true"><use href="#ramita" width="120" height="70"/></svg>
+      <div class="seccion__in">
+        <div class="encabezado revelar">
+          <p class="eyebrow">Si deseas hacerme un regalo</p>
+          <h2 class="titulo" id="t-regalos">Mesa de regalos</h2>
+          <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
         </div>
-        <div class="regalo">
-          <span class="lugar__tipo">El día de la fiesta</span>
-          <h3>Lluvia de sobres</h3>
-          <p>Habrá una caja a la entrada para tu sobre.</p>
+        <div class="regalos revelar">
+          <div class="regalo">
+            <span class="icono-circulo" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-regalo" width="48" height="48"/></svg></span>
+            <span class="lugar__tipo">Tienda departamental</span>
+            <h3>Liverpool · Evento 51234567</h3>
+            <p>(muestra)</p>
+            <button class="boton" type="button" data-regalo>Ver mesa de regalos</button>
+            <p class="aviso-regalo" aria-live="polite"></p>
+          </div>
+          <div class="regalo">
+            <span class="icono-circulo" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#ic-sobre" width="48" height="48"/></svg></span>
+            <span class="lugar__tipo">El día de la fiesta</span>
+            <h3>Lluvia de sobres</h3>
+            <p>Habrá una caja a la entrada para tu sobre.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============== CONFIRMACIÓN ============== -->
     <section class="seccion" id="confirmacion" aria-labelledby="t-confirmacion">
-      <div class="revelar">
-        <p class="eyebrow">Tu presencia es mi mejor regalo</p>
-        <h2 class="titulo" id="t-confirmacion">Confirma tu asistencia</h2>
-        <p class="confirmar-fecha">Antes del 1 de marzo de 2027 · Pase familiar, hasta 4 personas</p>
+      <div class="seccion__in">
+        <div class="encabezado revelar">
+          <p class="eyebrow">Tu presencia es mi mejor regalo</p>
+          <h2 class="titulo" id="t-confirmacion">Confirma tu asistencia</h2>
+          <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
+          <p class="confirmar-fecha">Antes del 1 de marzo de 2027 · Pase familiar, hasta 4 personas</p>
+        </div>
+        <div class="tarjeta-form revelar" data-confirmacion-formulario></div>
+        <div class="botones revelar">
+          <button class="boton" type="button" id="boton-calendario">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agregar al calendario</button>
+          <a class="boton" id="boton-compartir" href="https://wa.me/?text=Mira%20la%20invitaci%C3%B3n%20de%20XV%20de%20Ximena%20(muestra%20de%20Invitara)%3A%20https%3A%2F%2Falex10ja1.github.io%2Finvitara-demo-xv-jardin%2F" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>Compartir por WhatsApp</a>
+        </div>
       </div>
-      <div class="tarjeta-form revelar" data-confirmacion-formulario></div>
-      <div class="botones revelar">
-        <button class="boton boton--borde" type="button" id="boton-calendario">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agregar al calendario</button>
-        <a class="boton boton--borde" id="boton-compartir" href="https://wa.me/?text=Mira%20la%20invitaci%C3%B3n%20de%20XV%20de%20Ximena%20(muestra%20de%20Invitara)%3A%20https%3A%2F%2Falex10ja1.github.io%2Finvitara-demo-xv-jardin%2F" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>Compartir por WhatsApp</a>
-      </div>
+      <svg class="esquina esquina--abajo" viewBox="0 0 120 70" aria-hidden="true"><use href="#ramita" width="120" height="70"/></svg>
     </section>
 
     <!-- ============== MENSAJE FINAL ============== -->
-    <section class="seccion" id="final" aria-label="Mensaje final">
-      <div class="revelar">
+    <section class="seccion seccion--clara" id="final" aria-label="Mensaje final">
+      <div class="seccion__in revelar">
         <svg width="120" height="60" viewBox="0 0 120 60" style="margin:0 auto" aria-hidden="true">
           <use href="#hoja" x="6" y="26" width="46" height="18" style="color:#A9BCA0" transform="rotate(14 29 35)"/><use href="#hoja" x="68" y="26" width="46" height="18" style="color:#A9BCA0" transform="rotate(-14 91 35)"/>
           <use class="flor-crece" href="#flor" x="38" y="4" width="44" height="44" style="color:#5F7A61"/></svg>
         <p class="frase" style="margin-top:14px">Te espero para celebrar juntos</p>
         <p class="final__nombre">Ximena</p>
+        <div class="separador" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#flor" width="20" height="20"/></svg></div>
+        <p class="final__fecha">13 · 03 · 2027</p>
       </div>
     </section>
   </main>
@@ -358,7 +580,7 @@
     .invitara-contacto__btn svg{flex:none;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     .invitara-contacto__btn--principal{min-height:56px;background:#A44A5C;border-color:#A44A5C;color:#FFFFFF}
     .invitara-contacto__btn--principal:hover{background:#7E3443;border-color:#7E3443}
-    .invitara-contacto__nota{margin:18px 0 0;font-size:13px;color:#5A3E44}
+    .invitara-contacto__nota{margin:18px 0 0;font-size:16px;color:#5A3E44}
     @media (min-width:700px){
       .invitara-contacto__caja{max-width:620px}
       .invitara-contacto__botones{display:grid;grid-template-columns:1fr 1fr}

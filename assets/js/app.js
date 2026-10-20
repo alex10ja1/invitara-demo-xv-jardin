@@ -20,16 +20,30 @@
   audio.addEventListener('error', function () { botonMusica.hidden = true; });
 
   /* ---------- sobre ---------- */
-  var sobre = $('sobre');
-  function ponerAbre(v) { sobre.style.setProperty('--abre', v); sobre.style.opacity = v > .75 ? String(1 - (v - .75) / .25) : '1'; }
-  function cerrarSobre() { sobre.hidden = true; document.body.style.overflow = ''; botonMusica.hidden = false; revisarVisibles(); }
+  /* Apertura en cuatro tiempos sobre un solo avance v (0 → 1):
+     el sello se desvanece, la solapa gira, la carta sube y todo se desvanece hacia la portada. */
+  var sobre = $('sobre'), abriendo = false;
+  var tramo = function (v, a, b) { return Math.max(0, Math.min(1, (v - a) / (b - a))); };
+  var suave = function (x) { return x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; };
+  function ponerAbre(v) {
+    var solapa = suave(tramo(v, .12, .48));
+    sobre.style.setProperty('--sello', tramo(v, 0, .18));
+    sobre.style.setProperty('--solapa', solapa);
+    sobre.style.setProperty('--carta', suave(tramo(v, .46, .78)));
+    sobre.classList.toggle('abierta', solapa > .5);
+    sobre.classList.toggle('abriendo', v > 0);
+    sobre.style.opacity = String(1 - tramo(v, .8, 1));
+  }
+  function cerrarSobre() { sobre.hidden = true; document.body.style.overflow = ''; botonMusica.hidden = false; revisarVisibles(); dibujarLinea(); }
   function abrirSobre() {
+    if (abriendo) return;
+    abriendo = true;
     tocar();
-    if (reducido) { cerrarSobre(); return; }
-    var t0 = performance.now(), dur = 1500;
+    if (reducido) { sobre.classList.add('desvanece'); setTimeout(cerrarSobre, 650); return; }
+    var t0 = performance.now(), dur = 1800;
     (function paso(ahora) {
       var k = Math.min(1, (ahora - t0) / dur);
-      ponerAbre(k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
+      ponerAbre(k);
       if (k < 1) requestAnimationFrame(paso); else cerrarSobre();
     })(t0);
   }
@@ -59,6 +73,21 @@
   } else {
     revelables.forEach(function (el) { el.classList.add('visto'); });
   }
+
+  /* ---------- itinerario: la línea se dibuja hacia abajo conforme bajas ---------- */
+  var itin = $('itin'), lineaCompleta = false, pendiente = false;
+  function dibujarLinea() {
+    pendiente = false;
+    if (lineaCompleta) return;
+    var r = itin.getBoundingClientRect();
+    var p = Math.max(0, Math.min(1, (window.innerHeight * .78 - r.top) / r.height));
+    if (reducido) p = 1;
+    itin.style.setProperty('--dibujo', p.toFixed(3));
+    if (p >= .99) { lineaCompleta = true; itin.classList.add('completa'); }
+  }
+  window.addEventListener('scroll', function () { if (!pendiente) { pendiente = true; requestAnimationFrame(dibujarLinea); } }, { passive: true });
+  window.addEventListener('resize', dibujarLinea);
+  dibujarLinea();
 
   /* ---------- mapas ---------- */
   [].forEach.call(document.querySelectorAll('[data-mapa]'), function (b) {
@@ -145,7 +174,10 @@
   window.XV = {
     abre: ponerAbre,
     cerrarSobre: cerrarSobre,
-    revelarTodo: function () { revelables.forEach(function (el) { el.classList.add('visto'); }); },
+    revelarTodo: function () {
+      revelables.forEach(function (el) { el.classList.add('visto'); });
+      lineaCompleta = true; itin.style.setProperty('--dibujo', 1); itin.classList.add('completa');
+    },
     confeti: confeti
   };
 })();
