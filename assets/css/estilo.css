@@ -238,7 +238,7 @@ main{padding-top:44px}
 .conf__pase{color:var(--oro-texto)!important;font-family:var(--f-ui)}
 .conf input,.conf select,.conf textarea{font-size:18px!important}
 .conf__opcion span{font-family:var(--f-ui);font-size:16px!important}
-.conf__boton,.conf__boton--secundario{min-height:52px;background:var(--verde-osc)!important;color:var(--crema)!important;border:0!important;border-radius:999px;font-family:var(--f-ui);font-size:16px!important;font-weight:500;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 8px 18px -10px rgba(63,87,67,.7);transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
+.conf__boton,.conf__boton--secundario{min-height:52px;background:var(--verde-osc)!important;color:var(--crema)!important;border:0!important;border-radius:999px!important;font-family:var(--f-ui)!important;font-size:16px!important;font-weight:500!important;letter-spacing:.08em!important;text-transform:uppercase!important;box-shadow:0 8px 18px -10px rgba(63,87,67,.7);transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
 .conf__boton:hover{filter:none;background:#344A38!important;transform:translateY(-2px)}
 .conf__boton:active{transform:scale(.97)}
 
